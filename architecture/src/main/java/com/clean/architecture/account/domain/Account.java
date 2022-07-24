@@ -44,10 +44,11 @@ public class Account {
     public Money calculateBalance() {
         return Money.add(
             this.baselineBalance,
-            this.activityWindow.calculateBalance(this.id)
+            (Money)this.activityWindow.calculateBalance(this.id)
         );
     }
 
+    // 비즈니스 규칙 검증은 도메인 엔티티 안에 넣는다 -> 비즈니스 로직 앞에 규칙이 존재하기 때문에 위치를 정하는 것이 쉬움
     public boolean withdraw(Money money, AccountId targetAccountId) {
 
         if (!mayWithdraw(money)) {
