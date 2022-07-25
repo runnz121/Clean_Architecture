@@ -2,7 +2,6 @@ package com.clean.architecture.account.adapter.in.web;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.clean.architecture.account.application.port.in.SendMoneyCommand;
@@ -14,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-public class ServiceMoneyController {
+public class SendMoneyController {
 
     private final SendMoneyUseCase sendMoneyUseCase;
 
